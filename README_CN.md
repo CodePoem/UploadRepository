@@ -46,3 +46,7 @@ allprojects {
     }
 }
 ```
+
+## 其他
+
+上传到 bintray(Jencter) 可能需要科学上网。

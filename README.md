@@ -48,3 +48,7 @@ allprojects {
     }
 }
 ```
+
+## Other
+
+Upload bintray(Jencter) maybe need scientific Internet.
