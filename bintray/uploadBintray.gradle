@@ -31,6 +31,10 @@ def pkgDeveloperName = BINTRAY_PKG_DEVELOPER_NAME
 // 开发者邮箱
 def pkgDeveloperEmail = BINTRAY_PKG_DEVELOPER_EMAIL
 
+group = pkgGroupId
+// VCS Tag
+version = pkgVersion
+
 // 生成Javadoc文档
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
