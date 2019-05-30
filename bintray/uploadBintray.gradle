@@ -61,9 +61,9 @@ def pomConfig = {
     developers {
         developer {
             // 开发者的个人信息
-            id BINTRAY_DEVELOPER_ID
-            name BINTRAY_DEVELOPER_NAME
-            email BINTRAY_DEVELOPER_EMAIL
+            id pkgDeveloperId
+            name pkgDeveloperName
+            email pkgDeveloperEmail
         }
     }
     scm {
