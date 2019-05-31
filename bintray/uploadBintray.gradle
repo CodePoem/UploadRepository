@@ -41,6 +41,13 @@ task javadoc(type: Javadoc) {
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 
+// 添加Javadoc依赖项
+afterEvaluate {
+    javadoc.classpath += files(android.libraryVariants.collect { variant ->
+        variant.javaCompile.classpath.files
+    })
+}
+
 // 文档打包成jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
