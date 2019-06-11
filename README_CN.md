@@ -33,18 +33,10 @@ apply from:'https://raw.githubusercontent.com/CodePoem/UploadRepository/master/b
 
 #### 修复 JavaDoc UTF-8 编码问题
 
-在你根项目的build.gradle中的allprojects节点添加以下代码。
+请使用uploadBintrayNoJavadoc.gradle无Javadoc上传。
 
 ```
-allprojects {
-    // javadoc encode
-    tasks.withType(Javadoc) {
-        options{
-            encoding "UTF-8"
-            charSet 'UTF-8'
-        }
-    }
-}
+apply from:'https://raw.githubusercontent.com/CodePoem/UploadRepository/master/bintray/uploadBintrayNoJavadoc.gradle'
 ```
 
 ## 其他

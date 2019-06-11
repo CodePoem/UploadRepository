@@ -33,20 +33,12 @@ You can refer localExample.properties.
 
 ### JavaDoc
 
-#### fix JavaDoc UTF-8 Encode
+####  Kotlin
 
-Add next code at the node of allprojects in your project build.gradle.
+Please use uploadBintrayNoJavadoc.gradle to upload without Javadoc.
 
 ```
-allprojects {
-    // javadoc encode
-    tasks.withType(Javadoc) {
-        options{
-            encoding "UTF-8"
-            charSet 'UTF-8'
-        }
-    }
-}
+apply from:'https://raw.githubusercontent.com/CodePoem/UploadRepository/master/bintray/uploadBintrayNoJavadoc.gradle'
 ```
 
 ## Other
