@@ -45,8 +45,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
     implementation rootProject.ext.dependencies["appcompat"]
     implementation rootProject.ext.dependencies["constraintLayout"]
-    publish rootProject.ext.dependencies["vDemoLibJava"]
-    publish rootProject.ext.dependencies["vDemoLibKotlin"]
+    publish project(":demo-lib-java")
+    publish project(":demo-lib-kotlin")
 }
 
 apply from: "$rootProject.projectDir/jitpack/uploadJitPackAndroid.gradle"

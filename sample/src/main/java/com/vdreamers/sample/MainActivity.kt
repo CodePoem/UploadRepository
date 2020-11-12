@@ -1,12 +1,13 @@
-package com.vdreamers.demo.lib.android
+package com.vdreamers.sample
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.vdreamers.demo.lib.android.HelloAndroid
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.upload_lib_android_activity_main)
+        setContentView(R.layout.activity_main)
 
         HelloAndroid.helloAndroid()
     }

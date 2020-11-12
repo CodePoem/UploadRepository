@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
 }
 
 android {
-    resourcePrefix "upload_sample_"
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
@@ -20,10 +20,10 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias rootProject.ext.release.keystoreAlias
-            keyPassword rootProject.ext.release.keystoreAliasPWD
-            storeFile rootProject.ext.release.keyFile
-            storePassword rootProject.ext.release.keystorePWD
+            keyAlias rootProject.ext.signRelease.keyAlias
+            keyPassword rootProject.ext.signRelease.keyPassword
+            storeFile rootProject.ext.signRelease.storeFile
+            storePassword rootProject.ext.signRelease.storePassword
         }
     }
     flavorDimensions "channel", "env"
@@ -39,7 +39,7 @@ android {
             dimension 'env'
         }
         production {
-            applicationId = rootProject.ext.android.applicationIdProduction
+            applicationId = rootProject.ext.android.applicationId
             dimension 'env'
         }
     }
@@ -51,6 +51,7 @@ android {
         }
         debug {
             applicationIdSuffix ".debug"
+            versionNameSuffix "-Debug"
             debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -59,6 +60,7 @@ android {
         beta {
             initWith release
             applicationIdSuffix ".beta"
+            versionNameSuffix "-Beta"
             debuggable true
         }
     }
@@ -72,5 +74,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
     implementation rootProject.ext.dependencies["appcompat"]
     implementation rootProject.ext.dependencies["constraintLayout"]
-    implementation rootProject.ext.dependencies["vDemoLibAndroid"]
+    implementation project(":demo-lib-android")
 }

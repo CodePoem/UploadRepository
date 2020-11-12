@@ -2,7 +2,7 @@ package com.vdreamers.demo.lib.java;
 
 public class HelloJava {
 
-    public static void helloKJava() {
+    public static void helloJava() {
         System.out.println("HelloJava~");
     }
 }

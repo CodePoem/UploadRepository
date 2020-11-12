@@ -31,10 +31,10 @@ if (isRunningOnTravis) {
 }
 
 ext {
-    release = [
+    signRelease = [
             "keyAlias"     : keystoreAlias,
             "keyPassword"  : keystoreAliasPWD,
             "storeFile"    : keyFile,
-            "storePassword": keystorePWD
+            "storePassword": keystorePWD,
     ]
 }

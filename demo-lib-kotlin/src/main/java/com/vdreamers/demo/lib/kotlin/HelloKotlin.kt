@@ -1,7 +1,7 @@
 package com.vdreamers.demo.lib.kotlin
 
 
-object MyKotlin {
+object HelloKotlin {
     fun helloKotlin() {
         println("HelloKotlin~")
     }

@@ -1,19 +1,18 @@
 // Test package version
-def junitVersion = "4.12"
-def runnerVersion = "1.0.2"
-def espressoCoreVersion = "3.1.1"
+def junitVersion = "4.13.1"
+def runnerVersion = "1.2.0"
+def espressoCoreVersion = "3.2.0"
 def robolectricVersion = "4.2"
 
 // normal package version
-def appcompatVersion = "1.0.0"
-def constraintLayoutVersion = "1.1.3"
+def appcompatVersion = "1.2.0"
+def constraintLayoutVersion = "2.0.4"
 def pkgVersionCode = Integer.parseInt(project.property("PKG_VERSION_CODE"))
 
 ext {
     android = [
             applicationId          : "com.vdreamers.demo.sample",
             applicationIdInternal  : "com.vdreamers.demo.sample.internal",
-            applicationIdProduction: "com.vdreamers.demo.sample.prodduction",
             compileSdkVersion      : 30,
             minSdkVersion          : 21,
             targetSdkVersion       : 28,
@@ -24,7 +23,7 @@ ext {
 
     testDependencies = [
             "junit"       : "junit:junit:${junitVersion}",
-            "runner"      : "androidx.test.runner:runner:${runnerVersion}",
+            "runner"      : "androidx.test:runner:${runnerVersion}",
             "espressoCore": "androidx.test.espresso:espresso-core:${espressoCoreVersion}",
             "robolectric" : "org.robolectric:robolectric:${robolectricVersion}",
     ]

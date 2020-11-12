@@ -1,4 +1,6 @@
-# UploadRepository 
+# UploadRepository
+
+[![](https://jitpack.io/v/CodePoem/UploadRepository.svg)](https://jitpack.io/#CodePoem/UploadRepository)
 
 [中文文档](README_CN.md)
 
