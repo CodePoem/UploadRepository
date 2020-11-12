@@ -47,7 +47,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            if (rootProject.ext.signRelease.storeFile.exists()) {
+                println("release: using jks ${rootProject.ext.signRelease.storeFile}")
+                signingConfig signingConfigs.release
+            } else {
+                println("no jks, use defalut signing")
+                signingConfig signingConfigs.debug
+            }
         }
         debug {
             applicationIdSuffix ".debug"
