@@ -32,8 +32,8 @@ ext {
     dependencies = [
             "appcompat"       : "androidx.appcompat:appcompat:${appcompatVersion}",
             "constraintLayout": "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
-            "vDemoLibAndroid" : "com.vdreamers.demo:lib-android:${uploadVersion}",
-            "vDemoLibJava"    : "com.vdreamers.demo:lib-java:${uploadVersion}",
-            "vDemoLibKotlin"  : "com.vdreamers.demo:lib-kotlin:${uploadVersion}",
+            "vDemoLibAndroid" : "com.github.CodePoem:lib-android:${uploadVersion}",
+            "vDemoLibJava"    : "com.github.CodePoem:lib-java:${uploadVersion}",
+            "vDemoLibKotlin"  : "com.github.CodePoem:lib-kotlin:${uploadVersion}",
     ]
 }
