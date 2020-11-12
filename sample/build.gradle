@@ -80,5 +80,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
     implementation rootProject.ext.dependencies["appcompat"]
     implementation rootProject.ext.dependencies["constraintLayout"]
+
     implementation project(":demo-lib-android")
+//    implementation 'com.github.CodePoem.UploadRepository:lib-android:1.0.6'
+//    implementation 'com.github.CodePoem.UploadRepository:lib-java:1.0.6'
+//    implementation 'com.github.CodePoem.UploadRepository:lib-kotlin:1.0.6'
 }
