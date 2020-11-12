@@ -1,0 +1,4 @@
+include ':sample'
+include ':demo-lib-kotlin'
+include ':demo-lib-android'
+include ':demo-lib-java'

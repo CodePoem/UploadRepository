@@ -1,0 +1,24 @@
+apply plugin: 'maven-publish'
+
+def pkgGroupId = PKG_GROUP_ID
+def pkgArtifactId = PKG_ARTIFACT_ID
+def pkgVersion = PKG_VERSION
+
+group = pkgGroupId
+version = pkgVersion
+
+afterEvaluate {
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                // Applies the component for the release build variant.
+                components.java
+
+                // You can then customize attributes of the publication as shown below.
+                groupId pkgGroupId
+                artifactId pkgArtifactId
+                version pkgVersion
+            }
+        }
+    }
+}

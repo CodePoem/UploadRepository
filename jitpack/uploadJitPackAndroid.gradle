@@ -1,0 +1,44 @@
+apply plugin: 'maven-publish'
+
+def pkgGroupId = PKG_GROUP_ID
+def pkgArtifactId = PKG_ARTIFACT_ID
+def pkgVersion = PKG_VERSION
+
+group = pkgGroupId
+version = pkgVersion
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId pkgGroupId
+                artifactId pkgArtifactId
+                version pkgVersion
+            }
+            // Creates a Maven publication called “debug”.
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+
+                // You can then customize attributes of the publication as shown below.
+                groupId pkgGroupId
+                artifactId pkgArtifactId
+                version pkgVersion
+            }
+            beta(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.beta
+
+                // You can then customize attributes of the publication as shown below.
+                groupId pkgGroupId
+                artifactId pkgArtifactId
+                version pkgVersion
+            }
+        }
+    }
+}
