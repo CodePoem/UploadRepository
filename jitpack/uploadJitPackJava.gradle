@@ -12,12 +12,18 @@ def pkgVersion = PKG_VERSION
 group = pkgGroupId
 version = pkgVersion
 
+task javaSourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.java.srcDirs
+}
+
 afterEvaluate {
     publishing {
         publications {
             mavenJava(MavenPublication) {
                 // Applies the component for the release build variant.
                 components.java
+                artifact javaSourcesJar
 
                 // You can then customize attributes of the publication as shown below.
                 groupId pkgGroupId
