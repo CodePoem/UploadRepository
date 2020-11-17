@@ -8,30 +8,57 @@ apply plugin: 'maven-publish'
 def pkgGroupId = PKG_GROUP_ID
 def pkgArtifactId = PKG_ARTIFACT_ID
 def pkgVersion = PKG_VERSION
+def pkgPackaging = PKG_PACKAGING
 
 group = pkgGroupId
 version = pkgVersion
 
-task androidSourcesJar(type: Jar) {
-    archiveClassifier.set("sources")
-    from android.sourceSets.main.java.srcDirs
+def getLocalRepositoryUrl() {
+    return uri("${rootDir}/.repos")
 }
 
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             maven(MavenPublication) {
-                artifact bundleReleaseAar
-                artifact androidSourcesJar
 
-                // You can then customize attributes of the publication as shown below.
+                def plugins = project.getPlugins()
+
+                if (plugins.hasPlugin('com.android.application') || plugins.hasPlugin('com.android.library')) {
+                    task androidSourcesJar(type: Jar) {
+                        archiveClassifier.set("sources")
+                        from android.sourceSets.main.java.srcDirs
+                    }
+
+                    artifact bundleReleaseAar
+                    artifact androidSourcesJar
+                } else {
+                    from components.java
+
+                    task sourcesJar(type: Jar, dependsOn: classes) {
+                        archiveClassifier.set("sources")
+                        from sourceSets.main.allSource
+                    }
+
+                    artifact sourcesJar
+                }
+
                 groupId pkgGroupId
                 artifactId pkgArtifactId
                 version pkgVersion
 
+                pom {
+                    packaging = pkgPackaging
+                }
+
                 pom.withXml {
-                    final dependenciesNode = asNode().appendNode('dependencies')
+                    def dependenciesNode
+                    def dependenciesNodeList = asNode().get('dependencies')
+                    if (dependenciesNodeList.isEmpty()) {
+                        dependenciesNode = asNode().appendNode('dependencies')
+                    } else {
+                        dependenciesNode = dependenciesNodeList[0]
+                    }
 
                     ext.addDependency = { String configurationName, Dependency dep, String scope ->
                         if (dep.group == null || dep.version == null || dep.name == null || dep.name == "unspecified") {
@@ -61,10 +88,11 @@ afterEvaluate {
                             exclusionNode.appendNode('artifactId', '*')
                         } else if (!dep.properties.excludeRules.empty) {
                             // Otherwise add specified exclude rules
-                            final exclusionNode = dependencyNode.appendNode('exclusions').appendNode('exclusion')
+                            final exclusionsNode = dependencyNode.appendNode('exclusions')
                             dep.properties.excludeRules.each { ExcludeRule rule ->
-                                exclusionNode.appendNode('groupId', rule.group ?: '*')
-                                exclusionNode.appendNode('artifactId', rule.module ?: '*')
+                                def exclusion = exclusionsNode.appendNode('exclusion')
+                                exclusion.appendNode('groupId', rule.group ?: '*')
+                                exclusion.appendNode('artifactId', rule.module ?: '*')
                             }
                         }
                     }
@@ -81,6 +109,11 @@ afterEvaluate {
                     dependencies.removeAll(configurations.api.getAllDependencies())
                     dependencies.each { dep -> addDependency("implementation", dep, "runtime") }
                 }
+            }
+        }
+        repositories {
+            maven {
+                url getLocalRepositoryUrl()
             }
         }
     }

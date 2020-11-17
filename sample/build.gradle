@@ -82,7 +82,9 @@ dependencies {
     implementation rootProject.ext.dependencies["constraintLayout"]
 
     implementation project(":demo-lib-android")
-//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-android:1.0.7'
-//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-java:1.0.7'
-//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-kotlin:1.0.7'
+//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-android:1.0.9'
+//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-java:1.0.9'
+//    implementation 'com.github.CodePoem.UploadRepository:demo-lib-kotlin:1.0.9'
+//    implementation 'com.github.CodePoem.UploadRepository:demo-base-android:1.0.9'
+
 }

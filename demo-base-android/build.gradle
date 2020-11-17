@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    resourcePrefix "upload_lib_android_"
+    resourcePrefix "upload_base_android_"
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
@@ -45,8 +45,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
     implementation rootProject.ext.dependencies["appcompat"]
     implementation rootProject.ext.dependencies["constraintLayout"]
-    publish project(":demo-base-android")
-    publish project(":demo-lib-java")
 }
 
 apply from: "$rootProject.projectDir/jitpack/uploadJitPack.gradle"

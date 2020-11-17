@@ -27,6 +27,9 @@ buildscript {
 
 allprojects {
     repositories {
+//        maven {
+//            url uri("${rootDir}/.repos")
+//        }
         jcenter()
         mavenCentral()
         google()

@@ -7,4 +7,13 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_7
 }
 
-apply from: "$rootProject.projectDir/jitpack/uploadJitPackJava.gradle"
+configurations {
+    publish
+    api.extendsFrom publish
+}
+
+dependencies {
+    publish project(":demo-lib-kotlin")
+}
+
+apply from: "$rootProject.projectDir/jitpack/uploadJitPack.gradle"
