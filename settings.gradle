@@ -1,3 +1,4 @@
+rootProject.name = "UploadRepository"
 include ':demo-base-android'
 include ':sample'
 include ':demo-lib-kotlin'
