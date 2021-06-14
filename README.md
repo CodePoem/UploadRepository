@@ -1,12 +1,12 @@
 # UploadRepository
 
-[![](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-base-android/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-base-android)
+demo-base-android: [![demo-base-android](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-base-android/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-base-android)
 
-[![](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-android/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-android)
+demo-lib-android: [![demo-lib-android](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-android/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-android)
 
-[![](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-kotlin)
+demo-lib-kotlin: [![demo-lib-kotlin](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-kotlin)
 
-[![](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-java)
+demo-lib-java: [![demo-lib-java](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.codepoem/demo-lib-java)
 
 [中文文档](README_CN.md)
 
