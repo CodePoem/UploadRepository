@@ -23,11 +23,11 @@ jcenter bintray 已废弃。
 项目根目录下 local.properties 添加属性:
 
 ```properties
-sonatype.username=password
-sonatype.password=password
+sonatype.username=${yourUsername}
+sonatype.password=${yourPassword}
 ```
 
-项目根目录下或者 gradle 根目录下($User/.gradle) gradle.properties 添加属性:
+项目根目录下或者 gradle 根目录下(${yourUserDirPath}/.gradle) gradle.properties 添加属性:
 
 ```properties
 signing.keyId=secretKeyId

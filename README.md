@@ -23,11 +23,11 @@ If you still want to use jcenter or jitpack with old upload scripts, please swit
 root project local.properties add properties:
 
 ```properties
-sonatype.username=password
-sonatype.password=password
+sonatype.username=${yourUsername}
+sonatype.password=${yourPassword}
 ```
 
-root project or gradle home($User/.gradle) gradle.properties add properties:
+root project or gradle home(${yourUserDirPath}/.gradle) gradle.properties add properties:
 
 ```properties
 signing.keyId=secretKeyId
